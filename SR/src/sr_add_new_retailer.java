@@ -42,13 +42,48 @@ public class sr_add_new_retailer {
 		
 		//Route
 		System.out.println("Select Route: ");
-		driver.findElementById("com.sslwireless.srapp:id/tvRouteList").click();
-		System.out.println(driver.findElementById("com.sslwireless.srapp:id/md_text_title").getText());
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[1]").click();
+		sr_select.main(driver, sc, "com.sslwireless.srapp:id/md_title");
 		
+		//Retailer Type
+		System.out.println("Select Retailer Type: ");
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[2]").click();
+		sr_select.main(driver, sc, "com.sslwireless.srapp:id/md_title");
+		
+		Thread.sleep(2000);
+		scroll_down.main(driver);
+		Thread.sleep(2000);
+		
+		//Retailer Position
+		System.out.println("Select Retailer Position: ");
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[3]").click();
+		sr_select.main(driver, sc, "com.sslwireless.srapp:id/md_title");
+		
+		//Retailer Category
+		System.out.println("Select Retailer Category: ");
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[4]").click();
+		sr_select.main(driver, sc, "com.sslwireless.srapp:id/md_title");
+		
+		//KFIL Freeze
+		System.out.println("Number of KFIL Freeze: ");
+		String kfil = sc.nextLine();
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.FrameLayout/android.widget.EditText").setValue(kfil);
+		Thread.sleep(1000);
+				
+		//Competitor's Freeze
+		System.out.println("Number of Competitor\'s Freeze: ");
+		String competitor = sc.nextLine();
+		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.FrameLayout/android.widget.EditText").setValue(competitor);
+		Thread.sleep(1000);
+		
+		driver.findElementById("com.sslwireless.srapp:id/btnContinue").click();
+		Thread.sleep(5000);
+		
+		driver.findElementById("com.sslwireless.srapp:id/btnAddNow").click();
+		Thread.sleep(3000);
 		
 		Thread.sleep(1000);
 		
 
 	}
-
 }

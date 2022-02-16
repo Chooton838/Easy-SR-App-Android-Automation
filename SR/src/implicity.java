@@ -12,14 +12,14 @@ public class implicity {
 		MobileElement y;
 		
 		try {
-			if (t == "id"){
+			if (t == "Id"){
 				y = driver.findElementById((String) x.get(0));
 			}
 			else {
 				y = driver.findElementByXPath((String) x.get(0));
 			}
 
-			WebDriverWait wait = new WebDriverWait(driver, 5);
+			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions.visibilityOf(y));
 			y.isDisplayed();
 			y.click();
@@ -38,6 +38,6 @@ public class implicity {
  * 
  * 		String t = "Id/XPath";
  * 
- * 		implicity.main(driver, m, t);
+ * 		implicity.main(driver, v, t);
  * 
  */

@@ -40,7 +40,7 @@ public class sr_main {
 		AndroidDriver<MobileElement> driver = (AndroidDriver<MobileElement>) driverMethod();
 			
 		Scanner sc = new Scanner(System.in);
-				
+		
 		//Login
 		sr_login.main(driver, sc);
 				
@@ -56,8 +56,8 @@ public class sr_main {
 			System.out.println("For Profile Management, Please Enter: 0");
 			System.out.println("Please Enter your choise: \n");
 						
-			//String ch = sc.nextLine();
-			String ch = "1";
+			String ch = sc.nextLine();
+			//String ch = "1";
 			
 			try {
 				int int_ch = Integer.parseInt(ch);
@@ -74,13 +74,14 @@ public class sr_main {
 					break;
 							
 				case 3:
-					//Booking_List.main(driver);
+					sr_add_new_retailer.main(driver, sc);
 					break;
 							
 				case 4:
 					break;
 					
 				case 5:
+					sr_delivery_confirmation.main(driver, sc);
 					break;
 					
 				case 0:
